@@ -1,0 +1,49 @@
+<p>
+    <mat-toolbar color="primary" class="header">
+      <span>Ebee Family Pantry</span>
+      <span class="example-spacer"></span>
+    <button mat-icon-button>
+        <mat-icon>group_add</mat-icon>
+    </button>  
+    <button mat-icon-button>
+        <mat-icon>people</mat-icon>
+    </button>  
+    <button mat-icon-button disabled="true">
+        <mat-icon (click)="ui.startRecipe">room_service</mat-icon>
+    </button>
+    <button mat-icon-button disabled="true">
+        <mat-icon (click)="ui.stockItem">shopping_basket</mat-icon>
+    </button>
+    <button mat-icon-button>
+        <mat-icon (click)="ui.logout">logout</mat-icon>
+    </button>
+    </mat-toolbar>
+</p>
+
+
+
+<!-- <form  class="mat-elevation-z8">
+    <mat-toolbar color="primary">Login</mat-toolbar>
+    <div class="form-fields">
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput [(ngModel)]="name" name="username" type="text" placeholder="Ebee" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput [(ngModel)]="password" name="password" [type]="'hide' ? 'password' : 'text' " required>
+            <button mat-icon-button matSuffix (click)="'hide = !hide'" type="button">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility' }} </mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+    <div class="form-buttons">
+        <button mat-raised-button type="submit" color="amber" style="margin-top: 10px;">Login</button>
+        <button mat-raised-button type="submit" color="amber" style="margin-top: 10px;">Register</button>
+    </div>
+
+
+</form> -->
+
+
+  

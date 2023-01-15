@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UiService } from './ui.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'yemi-akinwale-pantry-fe';
+
+  constructor(public ui:UiService) {
+    
+  }
 }

@@ -1,0 +1,30 @@
+
+<form  class="mat-elevation-z8">
+    <mat-toolbar color="primary">Register</mat-toolbar>
+    <p>Who is new?</p>
+    <div class="form-fields">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput [(ngModel)]="name"  type="text" placeholder="Ebee" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput [(ngModel)]="password"  [type]="hide ? 'password' : 'text' " required>
+            <button mat-icon-button matSuffix (click)="'hide = !hide'" type="button">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility' }} </mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password Repeat</mat-label>
+            <input matInput [(ngModel)]="passwordRepeat"  [type]="hide ? 'passwordRepeat' : 'text' " required>
+            <button mat-icon-button matSuffix (click)="'hide = !hide'" type="button">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility' }} </mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+    <div class="form-buttons">
+        <button mat-raised-button type="button" color="primary" style="margin-top: 10px">Register</button>
+    </div>
+
+
+</form>

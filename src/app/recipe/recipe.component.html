@@ -1,0 +1,49 @@
+
+    <form class="mat-elevation-z8"> 
+        <mat-toolbar color="primary">New Recipe</mat-toolbar>
+            <p>, what are you cooking today?</p>
+        <div class="form-fields"> 
+            <mat-form-field >
+                <mat-label>Name of Recipe</mat-label>
+                <input matInput [(ngModel)]="recipeName">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Recipe Image URL</mat-label>
+                <input matInput [(ngModel)]="recipeImg">
+            </mat-form-field>
+            <mat-form-field >
+                <button mat-button><mat-label>Item List:</mat-label></button>
+                <input matInput [(ngModel)]="recipeItems">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="form-fields">
+                <mat-label>Recipe Preparation</mat-label>
+                <textarea matInput [(ngModel)]="recipePrep"
+                 matInput
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="1"
+                        cdkAutosizeMaxRows="100"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="form-buttons"> 
+            <button mat-raised-button type="submit" color="primary" style="margin-top: 10px;">Make Recipe</button>
+        </div>
+    </form>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+

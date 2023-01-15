@@ -1,0 +1,56 @@
+
+   
+<form class="mat-elevation-z8"> 
+    <mat-toolbar color="primary">New Item</mat-toolbar>
+            <p>,Thanks for stocking the pantry!</p>
+        <p>1</p>
+        <div class="form-fields"> 
+            <mat-form-field >
+                <mat-label>Item Name</mat-label>
+                <input matInput [(ngModel)]="itemName"  type="text" placeholder="Bread" required>
+            </mat-form-field>
+            <mat-form-field >
+                <mat-label>Item Unit</mat-label>
+                <input matInput [(ngModel)]="itemUnit"  type="number" placeholder="10" required>
+            </mat-form-field> 
+            <mat-form-field >
+                    <mat-label>Item Image:</mat-label>
+                    <input matInput [(ngModel)]="itemImg"  placeholder="Image URL">
+            </mat-form-field>
+        </div>   
+        <p>2</p>   
+        <div class="form-fields"> 
+            <mat-form-field >
+                <mat-label>Item Name</mat-label>
+                <input matInput [(ngModel)]="itemName"  type="text" placeholder="Milk" required>
+            </mat-form-field>
+            <mat-form-field >
+                <mat-label>Item Unit</mat-label>
+                <input matInput [(ngModel)]="itemUnit"  type="number" placeholder="10" required>
+            </mat-form-field> 
+            <mat-form-field >
+                <mat-label>Item Image:</mat-label>
+                <input matInput [(ngModel)]="itemImg" placeholder="Image URL">
+            </mat-form-field>
+        </div>
+        <p>3</p>   
+        <div class="form-fields"> 
+            <mat-form-field >
+                <mat-label>Item Name</mat-label>
+                <input matInput [(ngModel)]="itemName"  type="text" placeholder="Egg" required>
+            </mat-form-field>
+            <mat-form-field >
+                <mat-label>Item Image:</mat-label>
+                <input matInput [(ngModel)]="itemImg"  placeholder="Image URL">
+            </mat-form-field>
+            <mat-form-field >
+                <mat-label>Item Unit</mat-label>
+                <input matInput [(ngModel)]="itemUnit" type="number" placeholder="10" required>
+            </mat-form-field> 
+        </div>
+        <div class="form-buttons"> 
+            <button mat-raised-button type="submit" color="primary" style="margin-top: 10px;">Store Item</button>
+        </div>
+</form>
+
+
