@@ -12,7 +12,7 @@
                 <input matInput [(ngModel)]="recipeImg">
             </mat-form-field>
             <mat-form-field >
-                <button mat-button><mat-label>Item List:</mat-label></button>
+                <button mat-button (click)="ui.displayItemList"><mat-label>Item List:</mat-label></button>
                 <input matInput [(ngModel)]="recipeItems">
             </mat-form-field>
         </div>
@@ -28,7 +28,7 @@
             </mat-form-field>
         </div>
         <div class="form-buttons"> 
-            <button mat-raised-button type="submit" color="primary" style="margin-top: 10px;">Make Recipe</button>
+            <button mat-raised-button type="submit" color="primary" style="margin-top: 10px;" (click)="ui.startRecipe">Start Cooking</button>
         </div>
     </form>
 

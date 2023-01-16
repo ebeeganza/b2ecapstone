@@ -26,7 +26,7 @@
         <div class="center">
             <h1 class="card-title">Pantry</h1>
             <h4> Your pantry is empty!</h4>
-            <div><button mat-raised-button color="accent">Go back</button></div>
+            <div><button mat-raised-button color="accent"(click)="ui.loading">Go back</button></div>
             </div>
         </div>
     </div>
@@ -38,9 +38,9 @@
     <mat-card class="example-card">
         <mat-card-header>
         <mat-card-title-group >
-            <mat-card-title>Name:</mat-card-title>
-            <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
-            <mat-card-subtitle>Unit:</mat-card-subtitle>
+            <mat-card-title>Name:<input matInput ></mat-card-title>
+            <img mat-card-sm-image src[(ngModel)]="https://material.angular.io/assets/img/examples/shiba2.jpg">
+            <mat-card-subtitle>Unit:<input matInput ></mat-card-subtitle>
             <mat-card-subtitle>Unit Needed:<input matInput [(ngModel)]="unitNeeded"></mat-card-subtitle>
             </mat-card-title-group>
         </mat-card-header>
@@ -48,6 +48,6 @@
     <mat-action-list>
         <td colspan="4"></td>
         <td><div class="table table-responsive"><button mat-raised-button color="primary" >Save</button></div></td> 
-        <td><div class="table table-responsive"><button mat-raised-button color="accent" >Go back </button></div></td>  
+        <td><div class="table table-responsive"><button mat-raised-button color="accent" (click)="ui.loading">Go back </button></div></td>  
     </mat-action-list>
 </ng-container>

@@ -1,6 +1,6 @@
 <app-header></app-header>
-<app-login *ngIf="ui.getShowLogin()"></app-login> 
-<app-register ></app-register> 
-<app-item ></app-item> 
-<app-recipe></app-recipe>  
-<app-item-list></app-item-list>
+<app-login *ngIf="ui.showLogin"></app-login> 
+<app-register *ngIf="ui.showRegister"></app-register> 
+<app-item *ngIf="ui.showItem"></app-item> 
+<app-recipe *ngIf="ui.showRecipe"></app-recipe>  
+<app-item-list *ngIf="ui.showItemList"></app-item-list>

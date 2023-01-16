@@ -41,6 +41,7 @@
             </mat-form-field>
             <mat-form-field >
                 <mat-label>Item Image:</mat-label>
+                <img mat-card-sm-image src[(ngModel)]="https://material.angular.io/assets/img/examples/shiba2.jpg">
                 <input matInput [(ngModel)]="itemImg"  placeholder="Image URL">
             </mat-form-field>
             <mat-form-field >
@@ -49,7 +50,7 @@
             </mat-form-field> 
         </div>
         <div class="form-buttons"> 
-            <button mat-raised-button type="submit" color="primary" style="margin-top: 10px;">Store Item</button>
+            <button mat-raised-button type="submit" color="primary" style="margin-top: 10px;" (click)="ui.stockItem">Store Item</button>
         </div>
 </form>
 

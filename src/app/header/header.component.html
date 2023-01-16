@@ -2,20 +2,20 @@
     <mat-toolbar color="primary" class="header">
       <span>Ebee Family Pantry</span>
       <span class="example-spacer"></span>
-    <button mat-icon-button>
+    <button mat-icon-button (click)="ui.displayRegister()">
         <mat-icon>group_add</mat-icon>
     </button>  
-    <button mat-icon-button>
+    <button mat-icon-button (click)="ui.displayLogin()">
         <mat-icon>people</mat-icon>
     </button>  
-    <button mat-icon-button disabled="true">
-        <mat-icon (click)="ui.startRecipe">room_service</mat-icon>
+    <button mat-icon-button disabled="true" (click)="ui.displayItem()">
+        <mat-icon>shopping_basket</mat-icon>
     </button>
-    <button mat-icon-button disabled="true">
-        <mat-icon (click)="ui.stockItem">shopping_basket</mat-icon>
+    <button mat-icon-button disabled="true" (click)="ui.displayRecipe()">
+        <mat-icon>room_service</mat-icon>
     </button>
     <button mat-icon-button>
-        <mat-icon (click)="ui.logout">logout</mat-icon>
+        <mat-icon (click)="ui.logout()">logout</mat-icon>
     </button>
     </mat-toolbar>
 </p>

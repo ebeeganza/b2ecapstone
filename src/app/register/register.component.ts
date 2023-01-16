@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UiService } from '../ui.service';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,7 @@ export class RegisterComponent implements OnInit{
     public passwordRepeat = ""
   
   
-    constructor() {}
+    constructor(public ui:UiService) {}
   
   
     ngOnInit(): void {
