@@ -87,13 +87,14 @@ export class UiService {
 
     public tryLogin(name: string, password: string): void {
       this.http.get<Member[]>('http://localhost:8080/members?name=${name}&password=${password}')
-      .pipe(take(1))
-      .subscribe({
-        next: member => {this.loginSuccess(name, password)},
-        error: () => {Error("Oops, something went wrong")}
-      })
-
+    .pipe(take(1))
+    .subscribe({
+      next: member => { if (member.length !==1 ) { { Error("invalid")} } },
+      error: () => {Error('Failed to register')}
+    })
+    return this.loginSuccess(name, password)
     }
+    
 
     public loginSuccess (name: string, password: string): void {
       this.loading()
