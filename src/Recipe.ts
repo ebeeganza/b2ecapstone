@@ -9,4 +9,4 @@ export class Recipe {
         public recipeItems: Item[],
         public recipePrep: string,
     ){ }
-    }
+}

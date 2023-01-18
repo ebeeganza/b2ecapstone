@@ -9,7 +9,7 @@ import { UiService } from './ui.service';
 export class AppComponent {
   title = 'yemi-akinwale-pantry-fe';
 
-  constructor(public ui:UiService) {
-    
-  }
+  constructor(public ui:UiService) {}
+
+  
 }

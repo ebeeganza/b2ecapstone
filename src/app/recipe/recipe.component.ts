@@ -17,13 +17,9 @@ export class RecipeComponent implements OnInit {
   public recipePrep = ""
 
 
-items: any;
-selectedItems: any;
-
   
-constructor(public ui:UiService){
-  this.items = this.ui.displayItemList();
-}
+constructor(public ui:UiService){}
+  
 
   ngOnInit(): void {
 

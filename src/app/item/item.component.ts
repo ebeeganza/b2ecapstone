@@ -11,19 +11,15 @@ import { FormControl } from '@angular/forms';
 export class ItemComponent implements OnInit {
         public id = null
         public itemName: string = ""
-        public itemUnit: number = 1
         public itemImg: string = ""
+        public itemUnit: number = 1
 
 
-        // newItem = '';
-        // itemControl = new FormControl();
+        
 
 constructor(public ui:UiService){}
 
-// addItem() {
-//   this.ui.addItem(this.newItem);
-//   this.newItem = '';
-// }
+
 
   ngOnInit(): void {
     

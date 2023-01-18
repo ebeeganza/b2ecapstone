@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { pipe, take } from 'rxjs';
@@ -16,7 +16,7 @@ export class UiService {
   public showItem: boolean = false
   public showRecipe: boolean = false
   public showItemList: boolean = false
-  public name : string | undefined
+  private name : string | undefined
   
   
   public disabled: boolean = false
@@ -29,40 +29,6 @@ export class UiService {
       const password = localStorage.getItem("password")
 
     }
-
-    // getItems() {
-    //   return this.items;
-    // }
-
-    // addItem(item) {
-    //   this.items.push(item);
-    // }
-
-    // removeItem(item) {
-    //   const index = this.items.indexOf(item);
-    //   this.items.splice(index, i);
-    // }
-    // }
-
-    // public getShowRegister(): boolean {
-    //   return this.showRegister
-    // }
-  
-    // public getShowLogin(): boolean {
-    //   return this.showLogin
-    // }
-
-    // public getShowItem(): boolean {
-    //   return this.showItem
-    // }
-
-    // public getShowRecipe(): boolean {
-    //   return this.showRecipe
-    // }
-
-    // public getShowItemList(): boolean {
-    //   return this.showItemList
-    // }
 
     public getName(): string | undefined {
       return this.name
@@ -120,20 +86,20 @@ export class UiService {
     }
 
     public tryLogin(name: string, password: string): void {
-      this.http.get<Member>('http://localhost:8080/members?name=${name}&password=${password}')
+      this.http.get<Member[]>('http://localhost:8080/members?name=${name}&password=${password}')
       .pipe(take(1))
       .subscribe({
-        next: member => {this.loginSuccess(member)},
-        error: () => { Error("Oops, something went wrong")}
+        next: member => {this.loginSuccess(name, password)},
+        error: () => {Error("Oops, something went wrong")}
       })
 
     }
 
-    public loginSuccess (member: Member): void {
-      this.disabled = true
-      this.name = member.name
-      localStorage.setItem("name", member.name)
-      localStorage.setItem("password", member.password)
+    public loginSuccess (name: string, password: string): void {
+      this.loading()
+      this.name = name
+      localStorage.setItem("name", name)
+      localStorage.setItem("password", password)
     }
 
     public stockItem (itemName: string, itemUnit: number, itemImg: string): void {
@@ -146,7 +112,7 @@ export class UiService {
       .pipe(take(1))
       .subscribe({
         next: () => {this.loading()},
-        error: () => { Error ("Cant store the item")}
+        error: () => {Error ("Can't store the item")}
       })
     }
 
@@ -161,19 +127,23 @@ export class UiService {
       .pipe(take(1))
       .subscribe({
         next: () => {this.loading()},
-        error: () => { Error ("Cant fix your recipe now")}
+        error: () => {Error ("Cant fix your recipe now")}
       })
     }
 
-    public pickedItems (item: Item): void {
-      this.http.put(`http://localhost:8080/item/${item.id}`,{ item
-    })
-        .pipe(take(1))
-        .subscribe ({
-          next: () => {this.displayRecipe()},
-          error: () => { Error ("Can't pick item")}
-        })
-    }
+    // public pickedItems (id: number, itemName: string, itemImg: string, itemUnit: number): void {
+    //   this.http.put(`http://localhost:8080/item/${id}`,{
+    //     id: null,
+    //     itemName: itemName,
+    //     itemImg: itemImg,
+    //     itemUnit: itemUnit
+    // })
+    //     .pipe(take(1))
+    //     .subscribe ({
+    //       next: () => {this.displayRecipe()},
+    //       error: () =>  {Error ("Can't pick item")}
+    //     })
+    // }
 
     public logout(): void {
       this.loading();

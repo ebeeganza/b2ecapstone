@@ -1,92 +1,5 @@
 
-<!-- <ng-container *ngIf="items.length == 0"> 
-    <div class ="container">
-        <div class="card">
-        <div class="center">
-            <h1 class="card-title">Pantry</h1>
-            <h4> Your pantry is empty!</h4>
-            <div><button mat-raised-button color="accent"(click)="ui.loading()">Go back</button></div>
-            </div>
-        </div>
-    </div>
-</ng-container> -->
-
-
-<ng-container >
-    <h3>{{ui.getName}}, select the ingredients for your recipe</h3>
-    <mat-card class="example-card" *ngFor="let item of items; let i = index">
-        <mat-card-header>
-        <mat-card-title-group >
-            <mat-card-title>{{item.itemName}}</mat-card-title>
-            <img mat-card-sm-image src={{item.itemImg}}>
-            <mat-card-subtitle>{{item.itemUnit}}</mat-card-subtitle>
-            <mat-card-subtitle>Unit Needed:<input matInput [(ngModel)]="unitNeeded" name="unitNeeded" type="number"></mat-card-subtitle>
-            </mat-card-title-group>
-        </mat-card-header>
-    </mat-card>
-    <mat-action-list>
-        <td colspan="4"></td>
-        <div class="table table-responsive"><button mat-raised-button color="primary" >Save</button></div>
-        <div class="table table-responsive"><button mat-raised-button color="accent" (click)="ui.loading()">Go back </button></div>
-    </mat-action-list>
-</ng-container>  
-
-
-
-<!-- <form [formGroup]="recipeForm">
-    <div formArrayName="items">
-    <div *ngFor="let item of recipeForm.get('items').controls; let i = index">
-        <input [formControlName]="i" type="checkbox" [value]="item.value">{{item.itemName}}
-    </div>
-    </div>
-
-<button (click)="onSubmit()">Submit</button>
-</form> -->
-<!-- <ng-container > 
-    <mat-list> 
-        <mat-list-item>  -->
-<!-- <mat-selection-list [(ngModel)]="selectedItems")]>
-    <mat-list-option *ngFor="let item of items" [value]="item">
-        {{item.itemName}}
-    </mat-list-option> 
-</mat-selection-list> -->
-<!-- </mat-list-item>
-</mat-list>
-</ng-container> -->
-
-<!-- <div> 
-<mat-list> 
-<mat-list-item *ngFor="let item of items"> 
-{{item.itemName}}
-{{item.itemUnit}}
-{{item.itemImg}}
-<input matInput [(ngModel)]="unitNeeded" name="unitNeeded" type="number" placeholder="10" required>
-</mat-list-item>
-</mat-list>
-
-</div> -->
-
-<!-- <input type="checkbox" [(ngModel)]="item.selected"> {{item.itemName}}
-   <input type="number" [(ngModel)]="item.itemUnit" *ngIf="item.selected" min="1"> -->
-
-<!-- <div *ngFor="let item of items">  -->
-   <!-- <mat-card class="example-card" *ngFor="let item of items">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>{{items[0]}}</mat-card-title>
-        <mat-card-subtitle>{{items[1]}}</mat-card-subtitle>
-        <img mat-card-sm-image src={{items[2]}}> alt:image
-        <input matInput [(ngModel)]="unitNeeded" name="unitNeeded" type="number" placeholder="10" required>
-    </mat-card-title-group>
-    </mat-card-header>
-  </mat-card> -->
-<!-- </div> -->
-
-<!-- "https://material.angular.io/assets/img/examples/shiba2.jpg"  -->
-
-
-
-<div class="cart-product">
+<div class="itemlist">
     <table class="table table-responsive">
         <thead>
             <tr class="space">
@@ -101,10 +14,11 @@
                 <td>{{item.itemName}}</td>
                 <td><img src ={{item.itemImg}} style="width: 100px; height: 100px"></td>
                 <td>{{item.itemUnit}}</td>
+                <td>Unit Needed:<input matInput [(ngModel)]="unitNeeded" name="unitNeeded" type="number"></td>
             </tr>
             <tr> 
                 <td colspan="2"></td>
-                <td><button mat-raised-button color="primary" (click)="ui.pickedItems"> Save</button></td>
+                <td><button mat-raised-button color="primary" (click)="ui.loading()"> Save</button></td>
                 <td><button mat-raised-button color="accent" (click)="ui.loading()"> Go Back</button></td>
            
             </tr>

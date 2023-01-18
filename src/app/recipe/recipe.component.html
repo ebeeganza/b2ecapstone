@@ -12,8 +12,8 @@
                 <input matInput [(ngModel)]="recipeImg" name="recipeImg">
             </mat-form-field>   
         </div>
-        <div>
-        <button mat-raised-button type="submit" color="primary" style="margin-top: 10px;"(click)="ui.displayItemList()"><mat-label>Items List:</mat-label></button>     
+        <div class="form-buttons">
+        <button mat-raised-button type="submit" color="primary" style="margin-top: 10px;"(click)="ui.displayItemList()"><mat-label>Items List</mat-label></button>     
         </div>
         <div>
             <mat-form-field class="form-fields">
@@ -30,36 +30,6 @@
             <button mat-raised-button type="submit" color="primary" style="margin-top: 10px;"(click)="ui.startRecipe(recipeName,recipeImg,recipeItems,recipePrep)">Start Cooking</button>
         </div>
     </form> 
-
-
-
- <!-- <mat-list> 
-<mat-selection-list [(ngModel)]="selectedItems")]>
-    <mat-list-option *ngFor="let item of items" [value]="item">
-                    {{item.itemName}}
-                    {{item.itemUnit}}
-    </mat-list-option>
-</mat-selection-list>
-</mat-list>    -->
-
-
-<!-- <mat-list>
-    <mat-list-item *ngFor="let item of items">
-        <mat-checkbox [(ngModel)]="item.selected">{{item.itemName}}{{item.itemUnit}}</mat-checkbox>
-    </mat-list-item>
-</mat-list> -->
-
-
-
-<!-- <h3>Selected Items</h3>
-<ul>
-    <li *ngFor="let item of selectedItems">
-        {{item.itemName}}
-        {{item.itemUnit}}
-    </li>
-</ul> -->
-
-
 
 
 
