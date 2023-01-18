@@ -8,13 +8,13 @@
     <button mat-icon-button (click)="ui.displayLogin()">
         <mat-icon>people</mat-icon>
     </button>  
-    <button mat-icon-button  (click)="ui.displayItem()">
+    <button mat-icon-button  (click)="ui.displayItem()" id="myButton" [disabled]="ui.isDisabled">
         <mat-icon>shopping_basket</mat-icon>
     </button>
-    <button mat-icon-button (click)="ui.displayItemList()">
+    <button mat-icon-button (click)="ui.displayItemList()" id="myButton" [disabled]="ui.isDisabled">
         <mat-icon>kitchen</mat-icon>
     </button>
-    <button mat-icon-button (click)="ui.displayRecipe()">
+    <button mat-icon-button (click)="ui.displayRecipe()" id="myButton" [disabled]="ui.isDisabled">
         <mat-icon>room_service</mat-icon>
     </button>
     <button mat-icon-button (click)="ui.logout()">

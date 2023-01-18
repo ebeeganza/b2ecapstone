@@ -19,7 +19,7 @@ export class UiService {
   private name : string | undefined
   
   
-  public disabled: boolean = false
+  public isDisabled: boolean = true
 
 
 
@@ -98,6 +98,7 @@ export class UiService {
 
     public loginSuccess (name: string, password: string): void {
       this.loading()
+      this.isDisabled = false
       this.name = name
       localStorage.setItem("name", name)
       localStorage.setItem("password", password)
@@ -148,7 +149,7 @@ export class UiService {
 
     public logout(): void {
       this.loading();
-      this.disabled = true;
+      this.isDisabled = true;
       this.name = undefined;
       localStorage.clear();
     }
