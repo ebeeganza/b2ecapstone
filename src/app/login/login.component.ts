@@ -8,8 +8,8 @@ import { UiService } from '../ui.service';
 })
 export class LoginComponent implements OnInit{
   public hide: boolean = true
-  public name = ""
-  public password = ""
+  public name: string = ""
+  public password: string = ""
 
 
   constructor(public ui:UiService) {}

@@ -41,3 +41,9 @@
     max-width: 400px;
     margin-bottom: 8px;
   }
+
+  app-item-list {
+    margin: 10px 10% 10px 10%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+  }

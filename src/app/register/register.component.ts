@@ -8,9 +8,9 @@ import { UiService } from '../ui.service';
 })
 export class RegisterComponent implements OnInit{
     public hide: boolean = true
-    public name = ""
-    public password = ""
-    public passwordRepeat = ""
+    public name: string = ""
+    public password: string = ""
+    public passwordRepeat: string = ""
   
   
     constructor(public ui:UiService) {}

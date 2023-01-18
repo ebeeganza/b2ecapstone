@@ -1,8 +1,9 @@
-export class Item { 
+export class Item {
+    
     constructor ( 
-        public id: number,
+        public id: null,
         public itemName: string,
-        public itemUnit: number,
         public itemImg: string,
+        public itemUnit: number,
     ){ }
     }

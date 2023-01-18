@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { pipe, take } from 'rxjs';
 import { Member } from 'src/Member';
+import { Item } from 'src/Item';
+import { Recipe } from 'src/Recipe';
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +19,9 @@ export class UiService {
   public name : string | undefined
   
   
-  public disable = true
+  public disabled: boolean = false
 
-  
+
 
   constructor(private http: HttpClient) {
 
@@ -27,6 +29,20 @@ export class UiService {
       const password = localStorage.getItem("password")
 
     }
+
+    // getItems() {
+    //   return this.items;
+    // }
+
+    // addItem(item) {
+    //   this.items.push(item);
+    // }
+
+    // removeItem(item) {
+    //   const index = this.items.indexOf(item);
+    //   this.items.splice(index, i);
+    // }
+    // }
 
     // public getShowRegister(): boolean {
     //   return this.showRegister
@@ -104,7 +120,7 @@ export class UiService {
     }
 
     public tryLogin(name: string, password: string): void {
-      this.http.get<Member>(`http://localhost:8080/members?name=${name}&password=${password}`)
+      this.http.get<Member>('http://localhost:8080/members?name=${name}&password=${password}')
       .pipe(take(1))
       .subscribe({
         next: member => {this.loginSuccess(member)},
@@ -114,7 +130,7 @@ export class UiService {
     }
 
     public loginSuccess (member: Member): void {
-      this.disable = false
+      this.disabled = true
       this.name = member.name
       localStorage.setItem("name", member.name)
       localStorage.setItem("password", member.password)
@@ -149,17 +165,21 @@ export class UiService {
       })
     }
 
-    // public pickItem (itemName: string, itemUnit: number, itemImg: string): void {
-    //   this.http.put(`http://localhost:8080/item/${item.id}`, item) 
-
-    //   }
-    // }
+    public pickedItems (item: Item): void {
+      this.http.put(`http://localhost:8080/item/${item.id}`,{ item
+    })
+        .pipe(take(1))
+        .subscribe ({
+          next: () => {this.displayRecipe()},
+          error: () => { Error ("Can't pick item")}
+        })
+    }
 
     public logout(): void {
-      this.loading() 
-      this.disable = true
-      this.name = undefined
-      localStorage.clear()
+      this.loading();
+      this.disabled = true;
+      this.name = undefined;
+      localStorage.clear();
     }
 
     

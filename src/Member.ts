@@ -1,6 +1,6 @@
 export class Member { 
     constructor ( 
-        public id: number,
+        public id: null,
         public name: string,
         public password: string,
         public passwordRepeat: string

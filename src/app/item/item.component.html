@@ -2,56 +2,70 @@
    
 <form class="mat-elevation-z8"> 
     <mat-toolbar color="primary">New Item</mat-toolbar>
-            <p>,Thanks for stocking the pantry!</p>
-        <p>1</p>
+            <p>{{ui.getName()}} Thanks for stocking the pantry!</p>
         <div class="form-fields"> 
             <mat-form-field >
                 <mat-label>Item Name</mat-label>
-                <input matInput [(ngModel)]="itemName"  type="text" placeholder="Bread" required>
+                <input matInput [(ngModel)]="itemName" name="itemName" type="text" placeholder="Egg" required>
             </mat-form-field>
             <mat-form-field >
                 <mat-label>Item Unit</mat-label>
-                <input matInput [(ngModel)]="itemUnit"  type="number" placeholder="10" required>
-            </mat-form-field> 
-            <mat-form-field >
-                    <mat-label>Item Image:</mat-label>
-                    <input matInput [(ngModel)]="itemImg"  placeholder="Image URL">
-            </mat-form-field>
-        </div>   
-        <p>2</p>   
-        <div class="form-fields"> 
-            <mat-form-field >
-                <mat-label>Item Name</mat-label>
-                <input matInput [(ngModel)]="itemName"  type="text" placeholder="Milk" required>
-            </mat-form-field>
-            <mat-form-field >
-                <mat-label>Item Unit</mat-label>
-                <input matInput [(ngModel)]="itemUnit"  type="number" placeholder="10" required>
+                <input matInput [(ngModel)]="itemUnit" name="itemUnit" type="number" placeholder="10" required>
             </mat-form-field> 
             <mat-form-field >
                 <mat-label>Item Image:</mat-label>
-                <input matInput [(ngModel)]="itemImg" placeholder="Image URL">
+                <input matInput [(ngModel)]="itemImg" name="itemImg">
             </mat-form-field>
-        </div>
-        <p>3</p>   
-        <div class="form-fields"> 
-            <mat-form-field >
-                <mat-label>Item Name</mat-label>
-                <input matInput [(ngModel)]="itemName"  type="text" placeholder="Egg" required>
-            </mat-form-field>
-            <mat-form-field >
-                <mat-label>Item Image:</mat-label>
-                <img mat-card-sm-image src[(ngModel)]="https://material.angular.io/assets/img/examples/shiba2.jpg">
-                <input matInput [(ngModel)]="itemImg"  placeholder="Image URL">
-            </mat-form-field>
-            <mat-form-field >
-                <mat-label>Item Unit</mat-label>
-                <input matInput [(ngModel)]="itemUnit" type="number" placeholder="10" required>
-            </mat-form-field> 
-        </div>
+        </div> 
         <div class="form-buttons"> 
-            <button mat-raised-button type="submit" color="primary" style="margin-top: 10px;" (click)="ui.stockItem">Store Item</button>
+            <button mat-raised-button type="submit" color="primary" style="margin-top: 10px;" (click)="ui.stockItem(itemName,itemUnit,itemImg)">Store Item</button>
         </div>
 </form>
 
 
+
+
+
+<!-- <form (ngSubmit)="ui.addItem">
+    <input type="text" [(ngModel)]="newItem" 
+    [formControl]="itemControl">
+    <button type="submit">Add Item</button>
+</form> -->
+
+
+
+
+        <!-- <p>2</p>
+        <div class="form-fields"> 
+            <mat-form-field >
+                <mat-label>Item Name</mat-label>
+                <input matInput [(ngModel)]="itemName" name="itemName" type="text" placeholder="Egg" required>
+            </mat-form-field>
+            <mat-form-field >
+                <mat-label>Item Image:</mat-label>
+                <input matInput [(ngModel)]="itemImg" name="itemImg">
+            </mat-form-field>
+            <mat-form-field >
+                <mat-label>Item Unit</mat-label>
+                <input matInput [(ngModel)]="itemUnit" name="itemUnit" type="number" placeholder="10" required>
+            </mat-form-field> 
+        </div>   
+        <p>3</p>   
+        <div class="form-fields"> 
+            <mat-form-field >
+                <mat-label>Item Name</mat-label>
+                <input matInput [(ngModel)]="itemName" name="itemName3" type="text" placeholder="Egg" required>
+            </mat-form-field>
+            <mat-form-field >
+                <mat-label>Item Image:</mat-label>
+                <input matInput [(ngModel)]="itemImg" name="itemImg3">
+                 </mat-form-field>
+            <mat-form-field >
+                <mat-label>Item Unit</mat-label>
+                <input matInput [(ngModel)]="itemUnit" name="itemUnit3" type="number" placeholder="10" required>
+            </mat-form-field> 
+        </div> -->
+        
+
+<!-- 'https://material.angular.io/assets/img/examples/shiba2.jpg'>
+                <input matInput [(ngModel)]="itemImg"  placeholder="Image URL"> -->

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UiService } from '../ui.service';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -9,11 +10,20 @@ import { UiService } from '../ui.service';
 })
 export class ItemComponent implements OnInit {
         public id = null
-        public itemName = ""
-        public itemUnit = 1
-        public itemImg = ""
+        public itemName: string = ""
+        public itemUnit: number = 1
+        public itemImg: string = ""
+
+
+        // newItem = '';
+        // itemControl = new FormControl();
 
 constructor(public ui:UiService){}
+
+// addItem() {
+//   this.ui.addItem(this.newItem);
+//   this.newItem = '';
+// }
 
   ngOnInit(): void {
     
