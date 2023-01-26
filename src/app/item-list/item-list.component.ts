@@ -13,20 +13,18 @@ import { MatListOption, MatSelectionList } from '@angular/material/list';
   
 })
 export class ItemListComponent implements OnInit{
-      public id: number = 1
-      public itemName: string = ""
-      public itemImg: string = ""
-      public itemUnit: number = 1
-      public unitNeeded: number = 1
-      items: any;
-
+      
+  public id: number = 1
+  public itemName: string = ""
+  public itemImg: string = ""
+  public itemUnit: number = 1
+  
       
 
  
 
   constructor(public ui:UiService ){
-   
-
+     this.ui.getAllItems();
   }
   ngOnInit() {
   

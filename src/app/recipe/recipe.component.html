@@ -1,7 +1,6 @@
 
     <form class="mat-elevation-z8"> 
         <mat-toolbar color="primary">New Recipe</mat-toolbar>
-            <p>{{ui.getName()}} what are you cooking today?</p>
         <div class="form-fields"> 
             <mat-form-field >
                 <mat-label>Name of Recipe</mat-label>
@@ -12,9 +11,16 @@
                 <input matInput [(ngModel)]="recipeImg" name="recipeImg">
             </mat-form-field>   
         </div>
+
         <div class="form-buttons">
-        <button mat-raised-button type="submit" color="primary" style="margin-top: 10px;"(click)="ui.displayItemList()"><mat-label>Items List</mat-label></button>     
+        <button mat-raised-button type="submit" color="primary" style="margin-top: 10px;"(click)="ui.displayRecipeItem()"><mat-label>Pick Ingredients</mat-label></button>   
         </div>
+    
+        <div class="item-field" *ngFor="let item of ui.recipeItems; let i = index">
+            <mat-card>{{item.itemName}}</mat-card>
+            <mat-card><input matInput type="number" [(ngModel)] = "item.unitNeeded" name="item.unitNeeded"></mat-card>
+        </div>
+        
         <div>
             <mat-form-field class="form-fields">
                 <mat-label>Recipe Preparation</mat-label>
@@ -26,8 +32,9 @@
                         cdkAutosizeMaxRows="100"></textarea>
             </mat-form-field>
         </div>
+
         <div class="form-buttons"> 
-            <button mat-raised-button type="submit" color="primary" style="margin-top: 10px;"(click)="ui.startRecipe(recipeName,recipeImg,recipeItems,recipePrep)">Start Cooking</button>
+            <button mat-raised-button type="submit" color="primary" style="margin-top: 10px;" (click)="ui.newRecipe(recipeName,recipeImg,recipePrep)">Start Cooking</button>
         </div>
     </form> 
 
@@ -35,9 +42,5 @@
 
 
   
-  
-
-
-
-
-
+    
+   

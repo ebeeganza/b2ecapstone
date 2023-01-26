@@ -1,4 +1,4 @@
-.card {
+/* .card {
     object-fit: contain;
 }
 
@@ -46,4 +46,20 @@
     margin: 10px 10% 10px 10%;
     display: grid;
     grid-template-columns: 33% 33% 33%;
-  }
+  } */
+
+
+
+.example-card {
+    max-width: 400px;
+    margin-bottom: 8px;
+}
+.recipe-list {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+.header {
+    text-align: center;
+    text-decoration: dashed;
+    font-size: x-large;
+}

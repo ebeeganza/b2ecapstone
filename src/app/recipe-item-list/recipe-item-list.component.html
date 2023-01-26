@@ -1,0 +1,92 @@
+<!-- 
+
+
+<form class="mat-elevation-z8">
+<mat-toolbar color="primary">Recipe Items</mat-toolbar>
+<div class="example-container" >
+    <div>
+    <mat-form-field >
+      <mat-label>Recipe Item</mat-label>
+      <input matInput type="text" [(ngModel)]="itemName" name="itemA" [ngModelOptions]="{standalone:true}" placeholder="item1" >
+    </mat-form-field>
+    <mat-form-field floatLabel="always">
+      <mat-label>Unit Needed</mat-label>
+      <input matInput [(ngModel)]="unitNeeded" type="number" class="example-right-align" placeholder="0">
+    </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field>
+        <mat-label>Recipe Item</mat-label>
+        <input matInput type="text" [(ngModel)]="itemName" name="itemB" [ngModelOptions]="{standalone:true}" placeholder="item2">
+    </mat-form-field>
+    <mat-form-field floatLabel="always">
+        <mat-label>Unit Needed</mat-label>
+        <input matInput [(ngModel)]="unitNeeded" type="number" class="example-right-align" placeholder="0">
+    </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field >
+        <mat-label>Recipe Item</mat-label>
+        <input matInput [(ngModel)]="itemName" name="item3" [ngModelOptions]="{standalone:true}" type="text" placeholder="item3">
+    </mat-form-field>
+    <mat-form-field floatLabel="always">
+        <mat-label>Unit Needed</mat-label>
+        <input matInput [(ngModel)]="unitNeeded" type="number" class="example-right-align" placeholder="0">
+    </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field >
+        <mat-label>Recipe Item</mat-label>
+        <input matInput [(ngModel)]="itemName" name="item4" [ngModelOptions]="{standalone:true}" type="text" placeholder="item4">
+    </mat-form-field>
+    <mat-form-field floatLabel="always">
+        <mat-label>Unit Needed</mat-label>
+        <input matInput [(ngModel)]="unitNeeded" type="number" class="example-right-align" placeholder="0">
+    </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field >
+        <mat-label>Recipe Item</mat-label>
+        <input matInput [(ngModel)]="itemName" name="item5" [ngModelOptions]="{standalone:true}" type="text" placeholder="item5">
+    </mat-form-field>
+    <mat-form-field floatLabel="always">
+        <mat-label>Unit Needed</mat-label>
+        <input matInput [(ngModel)]="unitNeeded" type="number" class="example-right-align" placeholder="0">
+    </mat-form-field>
+    </div>
+            
+  </div>
+  <div class="form-buttons"> 
+    <button mat-raised-button type="submit" color="primary" style="margin-top: 10px;" >Save Items</button>
+  </div> 
+</form>  
+   -->
+
+
+
+
+
+
+<div>
+    <mat-card class="header">
+        <mat-card-content>List of items</mat-card-content>
+    </mat-card> 
+    </div>
+    <hr>
+    <div class="recipe-list">
+    <ng-container  *ngFor=" let item of this.ui.items; let  i = index">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-subtitle>Id:{{item.id}}</mat-card-subtitle>
+            <mat-card-title>Name:{{item.itemName}}</mat-card-title>
+            <mat-card-subtitle>Unit Available:{{item.itemUnit}}</mat-card-subtitle>
+            <img mat-card-sm-image [src]=item.itemImg>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-actions align="end">
+        <button mat-button type="submit" color="primary" (click)="ui.addItemToRecipeItems(item)"><mat-icon>done</mat-icon>Pick</button>
+    </mat-card-actions>  
+    </mat-card> 
+    </ng-container>
+    </div>

@@ -1,12 +1,13 @@
 import { Item } from "./Item";
+import { RecipeItems } from "./RecipeItems";
 
 export class Recipe { 
 
     constructor ( 
-        public id: number | null,
+        public id: null,
         public recipeName: string,
         public recipeImg: string,
-        public recipeItems: Item[],
+        public recipeItems: RecipeItems[],
         public recipePrep: string,
     ){ }
 }

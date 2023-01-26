@@ -1,0 +1,23 @@
+
+
+.header {
+    text-align: center;
+    text-decoration: dashed;
+    font-size: x-large;
+}
+
+.example-card {
+    text-align: center;
+    max-width: 400px;
+    margin-bottom: 8px;
+    font-size: larger;
+
+  }
+
+  /* form {
+    
+    width: 35%;
+    margin-top: 2.5%;
+    margin-left: auto;
+    margin-right: auto;
+  } */

@@ -22,3 +22,10 @@ form {
     margin-left: 30px;
     margin-right: 30px;
 }
+
+.item-field {
+    display: grid; 
+    margin-left: 30px; 
+    margin-right: 30px; 
+    grid-template-columns: 50% 50%;
+}

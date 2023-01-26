@@ -1,23 +1,26 @@
-<p>
+
     <mat-toolbar color="primary" class="header">
-      <span>Ebee Family Pantry</span>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" matTooltip="Home" id="myButton" [disabled]="ui.isDisabled">
+            <mat-icon>home</mat-icon>
+        </button>
+    <span>Ebee Family Pantry</span>
       <span class="example-spacer"></span>
-    <button mat-icon-button (click)="ui.displayRegister()">
+    <button mat-icon-button (click)="ui.displayRegister()" id="myButton" [disabled]="ui.isDisabledR" matTooltip="Register">
         <mat-icon>group_add</mat-icon>
     </button>  
-    <button mat-icon-button (click)="ui.displayLogin()">
+    <button mat-icon-button (click)="ui.displayLogin()" id="myButton" [disabled]="ui.isDisabledR" matTooltip="Login">
         <mat-icon>people</mat-icon>
     </button>  
-    <button mat-icon-button  (click)="ui.displayItem()" id="myButton" [disabled]="ui.isDisabled">
+    <button mat-icon-button  (click)="ui.displayItem()" id="myButton" [disabled]="ui.isDisabled" matTooltip="Stock Items">
         <mat-icon>shopping_basket</mat-icon>
     </button>
-    <button mat-icon-button (click)="ui.displayItemList()" id="myButton" [disabled]="ui.isDisabled">
+    <!-- <button mat-icon-button (click)="ui.displayItemList()" id="myButton" [disabled]="ui.isDisabled">
         <mat-icon>kitchen</mat-icon>
-    </button>
-    <button mat-icon-button (click)="ui.displayRecipe()" id="myButton" [disabled]="ui.isDisabled">
+    </button> -->
+    <button mat-icon-button (click)="ui.displayRecipe()" id="myButton" [disabled]="ui.isDisabled" matTooltip="Make Recipe">
         <mat-icon>room_service</mat-icon>
     </button>
-    <button mat-icon-button (click)="ui.logout()">
+    <button mat-icon-button (click)="ui.logout()" matTooltip="Logout">
         <mat-icon>logout</mat-icon>
     </button>
     </mat-toolbar>
@@ -25,7 +28,19 @@
         <span>B2E York Solutions Capstone by Yemi Akinwale</span>
     </mat-toolbar>
    
-</p>
 
-
-  
+    
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="ui.displayMember()">
+          <mat-icon>group</mat-icon>
+          <span>Members</span>
+        </button>
+        <button mat-menu-item (click)="ui.displayRecipeList()">
+          <mat-icon>room_service</mat-icon>
+          <span>Recipes</span>
+        </button>
+        <button mat-menu-item (click)="ui.displayItemList()">
+          <mat-icon>kitchen</mat-icon>
+          <span>Items</span>
+        </button>
+      </mat-menu>

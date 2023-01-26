@@ -1,0 +1,18 @@
+
+<ng-container>
+    <mat-card class="header">
+        <mat-card-content color="primary">Family Members</mat-card-content>
+    </mat-card>
+<hr>
+<mat-card class="example-card" *ngFor=" let member of this.ui.members; let  i = index" >
+    <mat-card-header>
+      <mat-card-title>{{member.name}}</mat-card-title>
+      <mat-card-subtitle>{{member.id}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions align="end">
+      <button mat-button ><mat-icon>edit</mat-icon>Edit</button>
+      <button mat-button color="warn" (click)="ui.removeMember(member.id)"><mat-icon>delete</mat-icon>Delete</button>
+    </mat-card-actions>
+</mat-card>
+</ng-container>  
+

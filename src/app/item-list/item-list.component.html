@@ -1,27 +1,29 @@
 
-<div class="itemlist">
-    <table class="table table-responsive">
-        <thead>
-            <tr class="space">
-                <th>Item Name: </th>
-                <th>Item Image: </th>
-                <th>Item Unit: </th>
-                <th>Unit Needed: </th>
-            </tr>
-        </thead>
-         <tbody>
-            <tr *ngFor=" let item of items; let  i = index">
-                <td>{{item.itemName}}</td>
-                <td><img src ={{item.itemImg}} style="width: 100px; height: 100px"></td>
-                <td>{{item.itemUnit}}</td>
-                <td>Unit Needed:<input matInput [(ngModel)]="unitNeeded" name="unitNeeded" type="number"></td>
-            </tr>
-            <tr> 
-                <td colspan="2"></td>
-                <td><button mat-raised-button color="primary" (click)="ui.loading()"> Save</button></td>
-                <td><button mat-raised-button color="accent" (click)="ui.loading()"> Go Back</button></td>
-           
-            </tr>
-         </tbody>
-    </table>
-</div>
+
+    <div>
+    <mat-card class="header">
+        <mat-card-content>List of items</mat-card-content>
+    </mat-card> 
+    </div>
+    <hr>
+    <div class="recipe-list">
+    <ng-container  *ngFor=" let item of this.ui.items; let  i = index">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-subtitle>Id:{{item.id}}</mat-card-subtitle>
+            <mat-card-title>Name:{{item.itemName}}</mat-card-title>
+            <mat-card-subtitle>Unit Available:{{item.itemUnit}}</mat-card-subtitle>
+            <img mat-card-sm-image [src]=item.itemImg>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-actions align="end">
+        <button mat-button ><mat-icon>edit</mat-icon>Edit</button>
+        <button mat-button color="warn" (click)="ui.deleteItem(item.id)"><mat-icon>delete</mat-icon>Delete</button>
+    </mat-card-actions>  
+    </mat-card> 
+    </ng-container>
+    </div>
+    
+
+

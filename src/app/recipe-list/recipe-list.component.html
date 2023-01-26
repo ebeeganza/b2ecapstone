@@ -1,0 +1,27 @@
+<div>
+<mat-card class="header">
+    <mat-card-content>List of Recipes</mat-card-content>
+</mat-card> 
+</div>
+<hr>
+<div class="recipe-list">
+<ng-container  *ngFor=" let recipe of this.ui.recipes; let  i = index">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{recipe.recipeName}}</mat-card-title>
+        <mat-card-subtitle>{{recipe.id}}</mat-card-subtitle>
+        <mat-card-subtitle>{{recipe.recipeItems}}</mat-card-subtitle>
+        <img mat-card-sm-image src="{{recipe.recipeImg}}" >
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{recipe.recipePrep}}</p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-button><mat-icon>edit</mat-icon>Edit</button>
+        <button mat-button color="warn" (click)="ui.deleteRecipe(recipe.id)"><mat-icon>delete</mat-icon>Delete</button> 
+    </mat-card-actions>
+  </mat-card> 
+</ng-container>
+</div>
